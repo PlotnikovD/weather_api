@@ -9,5 +9,6 @@ import java.util.List;
 @Repository
 public interface WeatherRepository extends CrudRepository<Weather, Long> {
     List<Weather> findWeatherByCityIgnoreCase(String city);
+    List<Weather> findAll();
 
 }

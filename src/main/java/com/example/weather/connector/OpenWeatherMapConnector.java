@@ -13,7 +13,6 @@ import java.util.concurrent.TimeUnit;
 
 
 @Component
-@EnableScheduling
 public class OpenWeatherMapConnector implements WeatherConnector {
     private final RestTemplate restTemplate;
 
@@ -27,7 +26,6 @@ public class OpenWeatherMapConnector implements WeatherConnector {
     }
 
     @Override
-    @Scheduled(fixedRate = 1, timeUnit = TimeUnit.MINUTES)
     public Double request(String city) {
         String fullUrl = url + city + "&appid=" + key + "&units=metric";
         OpenWeatherDto openWeatherDto = restTemplate.getForObject(fullUrl, OpenWeatherDto.class);

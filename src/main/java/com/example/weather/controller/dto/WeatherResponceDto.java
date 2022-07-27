@@ -1,7 +1,6 @@
 package com.example.weather.controller.dto;
 
 import com.example.weather.entitiy.Weather;
-
 import java.time.LocalDateTime;
 
 public class WeatherResponceDto {

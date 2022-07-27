@@ -9,6 +9,9 @@ public class OpenWeatherDto {
 /*    public OpenWeatherDto(Main main, String name, Sys sys) {
     }*/
 
+    public OpenWeatherDto() {
+    }
+
     public OpenWeatherDto(String city, String country, Double temperature, LocalDateTime time) {
 
     }

@@ -24,7 +24,7 @@ public class WeatherScheduler {
     }
 
 
-    @Scheduled(fixedRate = 1, timeUnit = TimeUnit.MINUTES)
+    @Scheduled(fixedRate = 10, timeUnit = TimeUnit.MINUTES)
     private void saveWeatherTable() {
         Double openWeatherTemp = openWeatherMapConnector.request("москва");
         Weather weather = new Weather("RU", "москва", openWeatherTemp, LocalDateTime.now());

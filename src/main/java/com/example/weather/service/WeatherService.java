@@ -22,8 +22,12 @@ public class WeatherService {
         if (weathers.isEmpty()) {
             throw new WeatherNotFound("Weather from city not found");
         }
-        return weathers.stream().map(w -> new OpenWeatherDto(w.getCity(), w.getCountry(),
+        return weathers.stream().map(w -> new OpenWeatherDto(w.getCountry(),w.getCity(),
                 w.getTemperature(), w.getTime())).collect(Collectors.toList());
+        }
+
+        public List<Weather> getAll() {
+            return weatherRepository.findAll();
         }
     }
 
