@@ -21,7 +21,7 @@ databaseChangeLog:
                   type: varchar(100)
               - column:
                   name: temperature
-                  type: float
+                  type: double
               - column:
                   name: time
                   type: timestamp without time zone

@@ -1,5 +1,8 @@
 package com.example.weather.entitiy;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.json.JSONPropertyIgnore;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -11,11 +14,11 @@ public class Weather {
     private Long id;
     private String country;
     private String city;
-    private Float temperature;
+    private Double temperature;
     private LocalDateTime time;
 
 
-    public Weather(Long id, String country, String city, Float temperature, LocalDateTime time) {
+    public Weather(Long id, String country, String city, Double temperature, LocalDateTime time) {
         this.id = id;
         this.country = country;
         this.city = city;
@@ -30,16 +33,8 @@ public class Weather {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getCountry() {
         return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
     }
 
     public String getCity() {
@@ -50,20 +45,12 @@ public class Weather {
         this.city = city;
     }
 
-    public Float getTemperature() {
+    public Double getTemperature() {
         return temperature;
-    }
-
-    public void setTemperature(Float temperature) {
-        this.temperature = temperature;
     }
 
     public LocalDateTime getTime() {
         return time;
-    }
-
-    public void setTime(LocalDateTime time) {
-        this.time = time;
     }
 
     @Override

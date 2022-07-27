@@ -1,15 +1,16 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5433/weather_list
+    url: jdbc:postgresql://localhost:5433/weathers_list
     username: postgres
     password: bbr2wc
 
   liquibase:
     change-log: classpath:liquibase/changelog.yml
 
-
 server:
   port: 8088
 
-
+config:
+  urlOpenWeather: https://api.openweathermap.org/data/2.5/weather?q=
+  tokenKey: 1672fe1157c099911b4a61b5b3d57e93
