@@ -1,7 +1,6 @@
 package com.example.weather.connector;
 
 import com.example.weather.connector.Dto.OpenWeatherDto;
-import com.example.weather.repository.WeatherRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -16,19 +15,16 @@ import java.util.concurrent.TimeUnit;
 @Component
 @EnableScheduling
 public class OpenWeatherMapConnector implements WeatherConnector {
-    private RestTemplate restTemplate;
+    private final RestTemplate restTemplate;
 
     @Value("${config.tokenKey}")
     private String key;
-/*    @Value("%{config.urlOpenWeather")
-    private String url;*/
     private final String url = "https://api.openweathermap.org/data/2.5/weather?q=";
 
 
     public OpenWeatherMapConnector(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
-
 
     @Override
     @Scheduled(fixedRate = 1, timeUnit = TimeUnit.MINUTES)
@@ -41,6 +37,7 @@ public class OpenWeatherMapConnector implements WeatherConnector {
 
         return openWeatherDto.getMain().getTemp();
     }
+
 }
 
 

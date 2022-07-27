@@ -18,8 +18,7 @@ public class Weather {
     private LocalDateTime time;
 
 
-    public Weather(Long id, String country, String city, Double temperature, LocalDateTime time) {
-        this.id = id;
+    public Weather(String country, String city, Double temperature, LocalDateTime time) {
         this.country = country;
         this.city = city;
         this.temperature = temperature;
