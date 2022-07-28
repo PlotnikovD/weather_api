@@ -10,6 +10,12 @@ public class WeatherResponceDto {
     private Double temperature;
     private LocalDateTime time;
 
+/*    public WeatherResponceDto(Long id, String country, String city, Double temperature, LocalDateTime time) {
+        this.temperature = temperature;
+        this.time = time;
+    }*/
+
+
     public WeatherResponceDto(Long id, String country, String city, Double temperature, LocalDateTime time) {
         this.id = id;
         this.country = country;

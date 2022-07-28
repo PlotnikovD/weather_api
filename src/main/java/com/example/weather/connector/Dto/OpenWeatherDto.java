@@ -6,8 +6,8 @@ public class OpenWeatherDto {
 
     private Main main;
 
-/*    public OpenWeatherDto(Main main, String name, Sys sys) {
-    }*/
+    public OpenWeatherDto(Main main, String name, Sys sys) {
+    }
 
     public OpenWeatherDto() {
     }

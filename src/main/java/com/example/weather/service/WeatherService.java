@@ -1,11 +1,10 @@
 package com.example.weather.service;
 
-import com.example.weather.connector.Dto.OpenWeatherDto;
+import com.example.weather.controller.dto.WeatherResponceDtoTemp;
 import com.example.weather.entitiy.Weather;
-import com.example.weather.exception.WeatherNotFound;
+import com.example.weather.exception.WeatherNotFoundException;
 import com.example.weather.repository.WeatherRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -17,13 +16,13 @@ public class WeatherService {
         this.weatherRepository = weatherRepository;
     }
 
-    public List<OpenWeatherDto> getListWeather(String city){
-        List<Weather> weathers =  weatherRepository.findWeatherByCityIgnoreCase(city);
+    public List<WeatherResponceDtoTemp> getListWeather(String city){
+        List<Weather> weathers =  weatherRepository.findFirstByCityOrderByTimeDesc(city);
         if (weathers.isEmpty()) {
-            throw new WeatherNotFound("Weather from city not found");
+            throw new WeatherNotFoundException("Weather from city not found");
         }
-        return weathers.stream().map(w -> new OpenWeatherDto(w.getCountry(),w.getCity(),
-                w.getTemperature(), w.getTime())).collect(Collectors.toList());
+        return weathers.stream().map(w -> new WeatherResponceDtoTemp(
+                w.getTemperature(), w.getTime().withNano(0))).collect(Collectors.toList());
         }
 
         public List<Weather> getAll() {
