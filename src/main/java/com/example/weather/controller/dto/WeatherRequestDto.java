@@ -23,10 +23,6 @@ public class WeatherRequestDto {
         return country;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
     public String getCity() {
         return city;
     }

@@ -20,7 +20,6 @@ public class OpenWeatherDto {
         return name;
     }
 
-
     public Sys getSys() {
         return sys;
     }
