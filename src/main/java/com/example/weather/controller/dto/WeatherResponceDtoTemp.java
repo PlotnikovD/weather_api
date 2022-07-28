@@ -8,7 +8,6 @@ public class WeatherResponceDtoTemp {
         this.temperature = temperature;
         this.time = time;
     }
-
     private Double temperature;
     private LocalDateTime time;
 
@@ -16,15 +15,7 @@ public class WeatherResponceDtoTemp {
         return temperature;
     }
 
-    public void setTemperature(Double temperature) {
-        this.temperature = temperature;
-    }
-
     public LocalDateTime getTime() {
         return time;
-    }
-
-    public void setTime(LocalDateTime time) {
-        this.time = time;
     }
 }

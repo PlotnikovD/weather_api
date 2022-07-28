@@ -10,11 +10,6 @@ public class WeatherResponceDto {
     private Double temperature;
     private LocalDateTime time;
 
-/*    public WeatherResponceDto(Long id, String country, String city, Double temperature, LocalDateTime time) {
-        this.temperature = temperature;
-        this.time = time;
-    }*/
-
 
     public WeatherResponceDto(Long id, String country, String city, Double temperature, LocalDateTime time) {
         this.id = id;
@@ -36,16 +31,8 @@ public class WeatherResponceDto {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
     public String getCountry() {
         return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
     }
 
     public String getCity() {
@@ -60,15 +47,9 @@ public class WeatherResponceDto {
         return temperature;
     }
 
-    public void setTemperature(Double temperature) {
-        this.temperature = temperature;
-    }
-
     public LocalDateTime getTime() {
         return time;
     }
 
-    public void setTime(LocalDateTime time) {
-        this.time = time;
-    }
+
 }
